@@ -1,12 +1,25 @@
-[gd_scene load_steps=2 format=3 uid="uid://bmv5sqjl3fo88"]
+[gd_scene load_steps=3 format=3 uid="uid://bmv5sqjl3fo88"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_54mq5"]
 radius = 7.07107
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yd1cb"]
+bg_color = Color(0.6, 0.509804, 0.172549, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+
 [node name="Nail1" type="StaticBody2D"]
-position = Vector2(921, 243)
 collision_layer = 16
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_54mq5")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -7.0
+offset_top = -7.0
+offset_right = 7.0
+offset_bottom = 7.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yd1cb")

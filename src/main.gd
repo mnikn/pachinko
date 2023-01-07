@@ -12,7 +12,8 @@ func create_ball():
 	var node = self.BallScene.instantiate()
 	node.connect("finished", self.create_ball)
 	$Balls.add_child(node)
-	await TweenUtils.show(node, 0.2, { "scale": false, "modulate": true })
+	TweenUtils.show(node, 0.1, { "scale": false, "modulate": true })
+	TweenUtils.show($Strength, 0.2)
 
 func _process(delta):
 	if $Balls.get_child_count() <= 0:
@@ -25,15 +26,17 @@ func _process(delta):
 	elif Input.is_action_just_released("player_shot"):
 		var node = $Balls.get_children()[0]
 		node.is_shot = true
+		TweenUtils.hide($Strength, 0.3)
 		node.linear_velocity.x = MAX_SPEED * strength
 		print_debug(node.linear_velocity.x)
 
 		# rewardx2
-#		node.linear_velocity.x = 2026.56103515625
+#		node.linear_velocity.x = 1799.609375
 		# rewardx1
-#		node.linear_velocity.x = 3457.474609375
-#		node.linear_velocity.x = 3186.587890625
-#		node.linear_velocity.x = 2884.94555664063
+		node.linear_velocity.x = 3457.474609375
+
+		# reward x5
+#		node.linear_velocity.x = 2460.73901367188
 		strength = 0
 	
 	$Strength.value = strength * 100

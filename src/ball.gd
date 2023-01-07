@@ -15,9 +15,9 @@ func _process(delta):
 	if self.is_finished:
 		return
 	
-	if self.position.y >= 750:
+	if self.position.y >= 650:
 		self.is_finished = true
-		await TweenUtils.hide(self, 0.2, { "scale": false, "modulate": true })
+		await TweenUtils.hide(self, 0.1, { "scale": false, "modulate": true })
 		self.queue_free()
 		self.emit_signal("finished")
 		return
@@ -25,7 +25,7 @@ func _process(delta):
 		zero_time += delta
 	if zero_time >= 1:
 		self.is_finished = true
-		await TweenUtils.hide(self, 0.2, { "scale": false, "modulate": true })
+		await TweenUtils.hide(self, 0.1, { "scale": false, "modulate": true })
 		self.queue_free()
 		self.emit_signal("finished")
 		return
