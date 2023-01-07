@@ -1,25 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://bmv5sqjl3fo88"]
+[gd_scene load_steps=4 format=3 uid="uid://bmv5sqjl3fo88"]
+
+[ext_resource type="Texture2D" uid="uid://cw3kdj02wc3cr" path="res://assets/nail.png" id="1_3e18a"]
+[ext_resource type="Script" path="res://src/nail.gd" id="1_wxln8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_54mq5"]
 radius = 7.07107
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yd1cb"]
-bg_color = Color(0.6, 0.509804, 0.172549, 1)
-corner_radius_top_left = 24
-corner_radius_top_right = 24
-corner_radius_bottom_right = 24
-corner_radius_bottom_left = 24
-
-[node name="Nail1" type="StaticBody2D"]
+[node name="Nail" type="StaticBody2D"]
 collision_layer = 16
+script = ExtResource("1_wxln8")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_54mq5")
 
-[node name="Panel" type="Panel" parent="."]
-offset_left = -7.0
-offset_top = -7.0
-offset_right = 7.0
-offset_bottom = 7.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_yd1cb")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3e18a")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4096
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_54mq5")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

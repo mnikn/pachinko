@@ -1,10 +1,27 @@
-[gd_scene load_steps=10 format=3 uid="uid://djpyer0o2dij2"]
+[gd_scene load_steps=24 format=3 uid="uid://djpyer0o2dij2"]
 
 [ext_resource type="Script" path="res://src/main.gd" id="1_x6r0o"]
 [ext_resource type="Script" path="res://src/polygon_static_body.gd" id="2_dv1vr"]
-[ext_resource type="PackedScene" uid="uid://clhyc3deheg1h" path="res://src/ball.tscn" id="2_jhy51"]
+[ext_resource type="Texture2D" uid="uid://csmnkk60gbjiy" path="res://assets/scene.png" id="3_lujp6"]
 [ext_resource type="PackedScene" uid="uid://bmv5sqjl3fo88" path="res://src/nail.tscn" id="4_0rri2"]
 [ext_resource type="FontFile" uid="uid://blna6hdacr5yk" path="res://assets/fonts/Noto_Sans_SC/NotoSansSC-Bold.otf" id="5_w8i62"]
+[ext_resource type="Texture2D" uid="uid://cjr2x0b3ul8j4" path="res://assets/mock_v2.png" id="6_fq0ia"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3n418"]
+bg_color = Color(0.25098, 0.152941, 0.317647, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.0901961, 0.12549, 0.219608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_epse8"]
+bg_color = Color(0.745098, 0.466667, 0.168627, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.909804, 0.756863, 0.439216, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_312l1"]
 size = Vector2(25, 14)
@@ -17,16 +34,104 @@ size = Vector2(14, 10)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gnu7a"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kn3h8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t4kps"]
+bg_color = Color(0.870588, 0.619608, 0.254902, 1)
+border_width_bottom = 4
+border_color = Color(0.533333, 0.294118, 0.168627, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_podmb"]
+bg_color = Color(0.909804, 0.756863, 0.439216, 1)
+border_width_bottom = 4
+border_color = Color(0.870588, 0.619608, 0.254902, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uhf5r"]
+bg_color = Color(0.909804, 0.756863, 0.439216, 1)
+border_width_top = 4
+border_color = Color(0.870588, 0.619608, 0.254902, 0)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f4sdl"]
+bg_color = Color(0.376471, 0.172549, 0.172549, 1)
+border_width_bottom = 4
+border_color = Color(0.203922, 0.109804, 0.152941, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_shnt8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e27mx"]
+bg_color = Color(0.811765, 0.341176, 0.235294, 1)
+border_width_bottom = 4
+border_color = Color(0.647059, 0.188235, 0.188235, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jt2tq"]
+bg_color = Color(0.854902, 0.52549, 0.243137, 1)
+border_width_bottom = 4
+border_color = Color(0.811765, 0.341176, 0.235294, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kjbj1"]
+bg_color = Color(0.854902, 0.52549, 0.243137, 1)
+border_width_top = 4
+border_color = Color(0.870588, 0.619608, 0.254902, 0)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e20kh"]
+bg_color = Color(0.458824, 0.141176, 0.219608, 1)
+border_width_bottom = 4
+border_color = Color(0.254902, 0.113725, 0.192157, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xhqfa"]
+
 [node name="Main" type="Node2D"]
 script = ExtResource("1_x6r0o")
 
-[node name="Ball" parent="." instance=ExtResource("2_jhy51")]
+[node name="Decal" type="TextureRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("6_fq0ia")
+
+[node name="TextureRect" type="TextureRect" parent="."]
 visible = false
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_lujp6")
 
 [node name="Wall" type="Polygon2D" parent="."]
+visible = false
+texture_filter = 1
 position = Vector2(4.0246, 0)
 scale = Vector2(0.992775, 1)
-polygon = PackedVector2Array(798.746, 670, 838.03, 668, 891.416, 661, 937.751, 650, 1017.33, 614, 1086.83, 543, 1136, 456, 1161.37, 312, 1169, 209, 1141.22, 126, 1101.94, 103, 1009.27, 92, 938.758, 89, 851.125, 91, 730.251, 90, 618.444, 88, 269.926, 85, 137.972, 82, 121.856, 85, 110.776, 98, 102.718, 125, 83.5793, 358, 94.2369, 583.004, 109.769, 661, 155.096, 720, -1.03205, 720, -1.03205, -1, 1286.27, 0, 1284.25, 717, 798.746, 718)
+polygon = PackedVector2Array(797.739, 668, 837.023, 667, 868.249, 664, 890.409, 660, 934.729, 649, 1015.31, 614, 1085.82, 542, 1135.18, 454, 1159.35, 312, 1166.4, 207, 1139.21, 127, 1099.92, 104, 1009.27, 93, 938.758, 91, 851.125, 91, 730.251, 90, 618.444, 88, 269.926, 85, 137.972, 84, 129.914, 85, 117.827, 91, 110.776, 98, 105.739, 126, 83.5793, 358, 94.6593, 583, 110.776, 662, 155.096, 720, -5.06117, 722, -4.05389, 0, 1286.27, 0, 1286.27, 722, 797.739, 720)
 script = ExtResource("2_dv1vr")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Wall"]
@@ -37,6 +142,8 @@ offset_left = 487.0
 offset_top = 594.0
 offset_right = 615.0
 offset_bottom = 621.0
+theme_override_styles/background = SubResource("StyleBoxFlat_3n418")
+theme_override_styles/fill = SubResource("StyleBoxFlat_epse8")
 
 [node name="RewardX1" type="Node2D" parent="."]
 
@@ -116,9 +223,10 @@ position = Vector2(279, 281)
 position = Vector2(305, 307)
 
 [node name="RoundPanelX1" type="Polygon2D" parent="RewardX1"]
+visible = false
 position = Vector2(186.425, 434.524)
 scale = Vector2(0.127073, 0.373774)
-polygon = PackedVector2Array(429.479, 284.868, 560.206, 357.104, 738.454, 357.104, 846.562, 284.868, 808.645, 284.868, 720.649, 346.402, 571.129, 346.402, 457.916, 284.868)
+polygon = PackedVector2Array(429.479, 284.868, 560.206, 357.104, 738.454, 357.104, 846.562, 284.868, 799.344, 284.867, 712.779, 346.402, 571.129, 346.402, 457.916, 284.868)
 script = ExtResource("2_dv1vr")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="RewardX1/RoundPanelX1"]
@@ -178,9 +286,10 @@ position = Vector2(891, 415)
 position = Vector2(858, 446)
 
 [node name="RoundPanelX2" type="Polygon2D" parent="RewardX2"]
+visible = false
 position = Vector2(770.425, 362.524)
 scale = Vector2(0.127073, 0.373774)
-polygon = PackedVector2Array(429.479, 284.868, 560.206, 357.104, 738.454, 357.104, 846.562, 284.868, 808.645, 284.868, 720.649, 346.402, 571.129, 346.402, 457.916, 284.868)
+polygon = PackedVector2Array(429.479, 284.868, 560.206, 357.104, 728.518, 357.104, 846.562, 284.868, 799.343, 284.867, 712.779, 346.402, 571.129, 346.402, 457.916, 284.868)
 script = ExtResource("2_dv1vr")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="RewardX2/RoundPanelX2"]
@@ -264,61 +373,67 @@ position = Vector2(513, 352)
 position = Vector2(483, 331)
 
 [node name="Round1x1" type="Polygon2D" parent="RewardX5"]
+visible = false
 position = Vector2(381, 362)
 scale = Vector2(0.302098, 0.373774)
-polygon = PackedVector2Array(429.479, 284.868, 560.206, 357.104, 594.988, 358.505, 591.678, 347.804, 571.129, 346.402, 508.173, 314.297, 457.916, 284.868)
+polygon = PackedVector2Array(423.703, 283.594, 556.111, 358.505, 594.988, 358.505, 591.678, 347.804, 569.351, 345.128, 509.768, 315.699, 453.495, 283.594)
 script = ExtResource("2_dv1vr")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="RewardX5/Round1x1"]
 collision_layer = 16
 
 [node name="Round1x2" type="Polygon2D" parent="RewardX5"]
-position = Vector2(421, 362)
-scale = Vector2(0.279522, 0.373774)
-polygon = PackedVector2Array(560.206, 357.104, 676.154, 355.83, 679.731, 347.804, 615.336, 334.427, 561.673, 347.804)
+visible = false
+position = Vector2(417.644, 362)
+scale = Vector2(0.284459, 0.373774)
+polygon = PackedVector2Array(560.206, 357.104, 676.154, 355.83, 679.731, 347.804, 619.969, 334.427, 609.422, 334.427, 560.206, 347.804)
 script = ExtResource("2_dv1vr")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="RewardX5/Round1x2"]
 collision_layer = 16
 
 [node name="Round1x3" type="Polygon2D" parent="RewardX5"]
+visible = false
 position = Vector2(416.255, 362)
 scale = Vector2(0.302098, 0.373774)
-polygon = PackedVector2Array(700.914, 355.83, 724.085, 355.83, 846.562, 284.868, 808.645, 284.868, 767.866, 314.297, 724.085, 345.128, 700.914, 347.804)
+polygon = PackedVector2Array(697.604, 355.83, 724.085, 355.83, 846.562, 283.594, 806.84, 283.594, 767.117, 313.023, 720.775, 345.128, 697.604, 347.804)
 script = ExtResource("2_dv1vr")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="RewardX5/Round1x3"]
 collision_layer = 16
 
 [node name="Round2x2" type="Polygon2D" parent="RewardX5"]
+visible = false
 position = Vector2(496, 439)
 scale = Vector2(0.135376, 0.228089)
-polygon = PackedVector2Array(502.305, 355.125, 586.741, 355.125, 672.203, 355.125, 679.589, 341.972, 539.239, 320.05, 502.305, 346.356)
+polygon = PackedVector2Array(494.918, 355.125, 672.203, 355.125, 679.589, 341.972, 531.853, 320.051, 494.918, 346.356)
 script = ExtResource("2_dv1vr")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="RewardX5/Round2x2"]
 collision_layer = 16
 
 [node name="RoundPanelX5" type="Polygon2D" parent="RewardX5"]
+visible = false
 position = Vector2(514, 478)
 scale = Vector2(0.0682432, 0.20006)
-polygon = PackedVector2Array(424.95, 284.915, 560.206, 357.104, 738.454, 357.104, 846.562, 284.868, 808.645, 284.868, 720.649, 346.402, 673.432, 346.402, 571.129, 346.402, 457.916, 284.868)
+polygon = PackedVector2Array(424.95, 284.915, 527.524, 354.894, 732.673, 354.894, 835.248, 284.915, 776.633, 284.915, 703.367, 344.897, 673.432, 346.402, 571.129, 346.402, 457.916, 284.868)
 script = ExtResource("2_dv1vr")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="RewardX5/RoundPanelX5"]
 collision_layer = 16
 
 [node name="InitialField" type="Polygon2D" parent="."]
+visible = false
 position = Vector2(238.107, -186)
 scale = Vector2(0.643459, 1.1875)
-polygon = PackedVector2Array(733.369, 658.526, 616.812, 663.579, 616.812, 710.737, 730.261, 710.737, 730.261, 702.316, 624.522, 702.316, 624.582, 666.947, 731.815, 662.737)
+polygon = PackedVector2Array(733.369, 658.526, 615.258, 663.579, 615.258, 708.211, 728.707, 708.211, 728.707, 702.316, 624.522, 702.316, 624.582, 666.947, 731.815, 662.737)
 script = ExtResource("2_dv1vr")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="InitialField"]
 collision_layer = 16
 
 [node name="Balls" type="Node2D" parent="."]
-position = Vector2(649, 639)
+position = Vector2(649, 633)
 
 [node name="AreaRewardX1" type="Area2D" parent="."]
 position = Vector2(264, 558)
@@ -350,7 +465,7 @@ shape = SubResource("RectangleShape2D_vv6yd")
 [node name="GUI" type="CanvasLayer" parent="."]
 
 [node name="Panel" type="Panel" parent="GUI"]
-offset_left = 674.0
+offset_left = 631.0
 offset_top = 12.0
 offset_right = 1256.0
 offset_bottom = 52.0
@@ -363,10 +478,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/separation = 12
 
 [node name="Panel" type="Panel" parent="GUI/Panel/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_kn3h8")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="GUI/Panel/HBoxContainer2/Panel"]
 layout_mode = 1
@@ -382,6 +499,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_override_fonts/normal_font = ExtResource("5_w8i62")
+theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
 text = "Current Marbles:"
 fit_content_height = true
@@ -392,6 +510,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_override_fonts/normal_font = ExtResource("5_w8i62")
+theme_override_font_sizes/normal_font_size = 18
 bbcode_enabled = true
 text = "Reward Marbles:"
 fit_content_height = true
@@ -404,43 +523,68 @@ focus_mode = 1
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("5_w8i62")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_t4kps")
+theme_override_styles/hover = SubResource("StyleBoxFlat_podmb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_uhf5r")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_f4sdl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_shnt8")
 text = "Bet"
 
 [node name="End" type="Button" parent="GUI/Panel/HBoxContainer2"]
+custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 focus_mode = 1
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("5_w8i62")
-text = "End gambling"
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_e27mx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jt2tq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kjbj1")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_e20kh")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_xhqfa")
+text = "End"
 
 [node name="RemarkRewardX1" type="Label" parent="GUI"]
-offset_left = 227.0
-offset_top = 566.0
-offset_right = 311.0
-offset_bottom = 593.0
+offset_left = 226.0
+offset_top = 568.0
+offset_right = 310.0
+offset_bottom = 595.0
+theme_override_colors/font_color = Color(0.533333, 0.294118, 0.168627, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
 theme_override_fonts/font = ExtResource("5_w8i62")
-text = "Reward X1"
+theme_override_font_sizes/font_size = 16
+text = "X1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RemarkRewardX2" type="Label" parent="GUI"]
-offset_left = 814.0
-offset_top = 497.0
-offset_right = 898.0
-offset_bottom = 524.0
+offset_left = 807.0
+offset_top = 498.0
+offset_right = 901.0
+offset_bottom = 528.0
+theme_override_colors/font_color = Color(0.745098, 0.466667, 0.168627, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("5_w8i62")
-text = "Reward X2"
+theme_override_font_sizes/font_size = 18
+text = "X2"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RemarkRewardX5" type="Label" parent="GUI"]
-offset_left = 518.0
-offset_top = 547.0
-offset_right = 602.0
-offset_bottom = 574.0
+offset_left = 505.0
+offset_top = 546.0
+offset_right = 610.0
+offset_bottom = 584.0
+theme_override_colors/font_color = Color(0.909804, 0.756863, 0.439216, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("5_w8i62")
-text = "Reward X5
+theme_override_font_sizes/font_size = 24
+text = "X5
 "
 horizontal_alignment = 1
 vertical_alignment = 1

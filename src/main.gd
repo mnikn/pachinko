@@ -4,7 +4,7 @@ var BallScene = preload("./ball.tscn")
 var MAX_SPEED = 4000
 var strength = 0
 
-var current_marbles = 100
+var current_marbles = 30
 var reward_marables = 1
 
 # Called when the node enters the scene tree for the first time.
@@ -15,8 +15,6 @@ func create_ball():
 	$GUI/Panel/HBoxContainer2/Bet.disabled = (self.current_marbles <= 1)
 	var node = self.BallScene.instantiate()
 	node.connect("finished", func ():
-		self.current_marbles -= 1
-		self.reward_marables += 1
 		var is_reward1 = $AreaRewardX1.get_overlapping_bodies()
 		var target_reward = 0
 		if is_reward1:
@@ -34,10 +32,12 @@ func create_ball():
 			tween.set_parallel(true)
 			var duration = 0.5
 			tween.tween_property(self, "current_marbles", target_reward, duration)
-			tween.tween_property(self, "reward_marables", 1, duration)
+			tween.tween_property(self, "reward_marables", 0, duration)
 			await tween.finished
 			await self.get_tree().create_timer(0.5).timeout
-			
+		
+		self.current_marbles -= 1
+		self.reward_marables += 1
 		if self.current_marbles == 0:
 			print_debug("Game over")
 			return
@@ -71,12 +71,11 @@ func _process(delta):
 		print_debug(node.linear_velocity.x)
 
 		# rewardx2
-#		node.linear_velocity.x = 1799.609375
+#		node.linear_velocity.x = 1799.78662109375
 		# rewardx1
-#		node.linear_velocity.x = 3457.474609375
-#		node.linear_velocity.x = 2942.82666015625
+#		node.linear_velocity.x = 2734.61596679688
 		# reward x5
-#		node.linear_velocity.x = 2460.73901367188
+#		node.linear_velocity.x = 2337.10791015625
 		strength = 0
 	
 	$Strength.value = strength * 100
@@ -100,6 +99,6 @@ func _on_bet_pressed():
 		self.current_marbles = 1
 	else:
 		self.current_marbles -= transfer_count
-	self.reward_marables += transfer_count
+	self.reward_marables += transfer_count * 2
 	
 	$GUI/Panel/HBoxContainer2/Bet.disabled = (self.current_marbles <= 1)
