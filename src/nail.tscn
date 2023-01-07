@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://bmv5sqjl3fo88"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_54mq5"]
+radius = 7.07107
+
+[node name="Nail1" type="StaticBody2D"]
+position = Vector2(921, 243)
+collision_layer = 16
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_54mq5")

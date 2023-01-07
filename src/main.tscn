@@ -1,0 +1,269 @@
+[gd_scene load_steps=6 format=3 uid="uid://djpyer0o2dij2"]
+
+[ext_resource type="Script" path="res://src/main.gd" id="1_x6r0o"]
+[ext_resource type="Script" path="res://src/polygon_static_body.gd" id="2_dv1vr"]
+[ext_resource type="PackedScene" uid="uid://clhyc3deheg1h" path="res://src/ball.tscn" id="2_jhy51"]
+[ext_resource type="PackedScene" uid="uid://bmv5sqjl3fo88" path="res://src/nail.tscn" id="4_0rri2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_54mq5"]
+radius = 7.07107
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_x6r0o")
+
+[node name="Ball" parent="." instance=ExtResource("2_jhy51")]
+visible = false
+
+[node name="Wall" type="Polygon2D" parent="."]
+position = Vector2(4.0246, 0)
+scale = Vector2(0.992775, 1)
+polygon = PackedVector2Array(798.746, 668, 838.03, 668, 891.416, 661, 937.751, 650, 1017.33, 614, 1086.83, 543, 1136, 456, 1161.37, 312, 1169, 209, 1141.22, 126, 1101.94, 103, 1009.27, 92, 938.758, 89, 851.125, 91, 730.251, 90, 618.444, 88, 269.926, 85, 137.972, 82, 121.856, 85, 110.776, 98, 102.718, 125, 83.5793, 358, 94.2369, 583.004, 109.769, 661, 155.096, 720, -1.03205, 720, -1.03205, -1, 794.718, 2, 1286.27, 4, 1284.25, 717, 798.746, 718)
+script = ExtResource("2_dv1vr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Wall"]
+collision_layer = 16
+
+[node name="Strength" type="ProgressBar" parent="."]
+offset_left = 487.0
+offset_top = 594.0
+offset_right = 615.0
+offset_bottom = 621.0
+
+[node name="RewardX1" type="Node2D" parent="."]
+
+[node name="Nail1" parent="RewardX1" instance=ExtResource("4_0rri2")]
+position = Vector2(223, 251)
+
+[node name="Nail5" parent="RewardX1" instance=ExtResource("4_0rri2")]
+position = Vector2(156, 371)
+
+[node name="Nail10" parent="RewardX1" instance=ExtResource("4_0rri2")]
+position = Vector2(375, 361)
+
+[node name="Nail11" parent="RewardX1" instance=ExtResource("4_0rri2")]
+position = Vector2(355, 377)
+
+[node name="Nail12" parent="RewardX1" instance=ExtResource("4_0rri2")]
+position = Vector2(335, 399)
+
+[node name="Nail13" parent="RewardX1" instance=ExtResource("4_0rri2")]
+position = Vector2(314, 422)
+
+[node name="Nail14" parent="RewardX1" instance=ExtResource("4_0rri2")]
+position = Vector2(299, 447)
+
+[node name="Nail15" parent="RewardX1" instance=ExtResource("4_0rri2")]
+position = Vector2(291, 479)
+
+[node name="Nail19" parent="RewardX1" instance=ExtResource("4_0rri2")]
+position = Vector2(323, 472)
+
+[node name="Nail20" parent="RewardX1" instance=ExtResource("4_0rri2")]
+position = Vector2(306, 506)
+
+[node name="Nail21" parent="RewardX1" instance=ExtResource("4_0rri2")]
+position = Vector2(273, 514)
+
+[node name="Nail17" parent="RewardX1" instance=ExtResource("4_0rri2")]
+position = Vector2(248, 492)
+
+[node name="Nail18" parent="RewardX1" instance=ExtResource("4_0rri2")]
+position = Vector2(213, 476)
+
+[node name="Nail16" parent="RewardX1" instance=ExtResource("4_0rri2")]
+position = Vector2(265, 462)
+
+[node name="Nail6" parent="RewardX1" instance=ExtResource("4_0rri2")]
+position = Vector2(184, 377)
+
+[node name="Nail22" parent="RewardX1" instance=ExtResource("4_0rri2")]
+position = Vector2(277, 396)
+
+[node name="Nail23" parent="RewardX1" instance=ExtResource("4_0rri2")]
+position = Vector2(243, 357)
+
+[node name="Nail7" parent="RewardX1" instance=ExtResource("4_0rri2")]
+position = Vector2(208, 399)
+
+[node name="Nail8" parent="RewardX1" instance=ExtResource("4_0rri2")]
+position = Vector2(228, 423)
+
+[node name="Nail9" parent="RewardX1" instance=ExtResource("4_0rri2")]
+position = Vector2(235, 451)
+
+[node name="Nail2" parent="RewardX1" instance=ExtResource("4_0rri2")]
+position = Vector2(250, 264)
+
+[node name="Nail26" parent="RewardX1" instance=ExtResource("4_0rri2")]
+position = Vector2(191, 305)
+
+[node name="Nail27" parent="RewardX1" instance=ExtResource("4_0rri2")]
+position = Vector2(223, 326)
+
+[node name="Nail3" parent="RewardX1" instance=ExtResource("4_0rri2")]
+position = Vector2(273, 282)
+
+[node name="Nail4" parent="RewardX1" instance=ExtResource("4_0rri2")]
+position = Vector2(295, 308)
+
+[node name="RoundPanelX1" type="Polygon2D" parent="RewardX1"]
+position = Vector2(186.425, 434.524)
+scale = Vector2(0.127073, 0.373774)
+polygon = PackedVector2Array(429.479, 284.868, 560.206, 357.104, 738.454, 357.104, 755.189, 348.504, 787.762, 326.345, 846.562, 284.868, 808.645, 284.868, 767.866, 314.297, 720.649, 346.402, 673.432, 346.402, 571.129, 346.402, 508.173, 314.297, 457.916, 284.868)
+script = ExtResource("2_dv1vr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RewardX1/RoundPanelX1"]
+collision_layer = 16
+
+[node name="RewardX2" type="Node2D" parent="."]
+
+[node name="Nail1" parent="RewardX2" instance=ExtResource("4_0rri2")]
+
+[node name="Nail2" type="StaticBody2D" parent="RewardX2"]
+position = Vector2(901, 259)
+collision_layer = 16
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RewardX2/Nail2"]
+shape = SubResource("CircleShape2D_54mq5")
+
+[node name="Nail3" type="StaticBody2D" parent="RewardX2"]
+position = Vector2(882, 279)
+collision_layer = 16
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RewardX2/Nail3"]
+shape = SubResource("CircleShape2D_54mq5")
+
+[node name="Nail4" type="StaticBody2D" parent="RewardX2"]
+position = Vector2(867, 302)
+collision_layer = 16
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RewardX2/Nail4"]
+shape = SubResource("CircleShape2D_54mq5")
+
+[node name="Nail8" type="StaticBody2D" parent="RewardX2"]
+position = Vector2(852, 395)
+collision_layer = 16
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RewardX2/Nail8"]
+shape = SubResource("CircleShape2D_54mq5")
+
+[node name="Nail13" type="StaticBody2D" parent="RewardX2"]
+position = Vector2(863, 428)
+collision_layer = 16
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RewardX2/Nail13"]
+shape = SubResource("CircleShape2D_54mq5")
+
+[node name="Nail7" type="StaticBody2D" parent="RewardX2"]
+position = Vector2(824, 371)
+collision_layer = 16
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RewardX2/Nail7"]
+shape = SubResource("CircleShape2D_54mq5")
+
+[node name="Nail6" type="StaticBody2D" parent="RewardX2"]
+position = Vector2(798, 353)
+collision_layer = 16
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RewardX2/Nail6"]
+shape = SubResource("CircleShape2D_54mq5")
+
+[node name="Nail5" type="StaticBody2D" parent="RewardX2"]
+position = Vector2(769, 336)
+collision_layer = 16
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RewardX2/Nail5"]
+shape = SubResource("CircleShape2D_54mq5")
+
+[node name="Nail9" type="StaticBody2D" parent="RewardX2"]
+position = Vector2(889, 452)
+collision_layer = 16
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RewardX2/Nail9"]
+shape = SubResource("CircleShape2D_54mq5")
+
+[node name="Nail16" type="StaticBody2D" parent="RewardX2"]
+position = Vector2(827, 445)
+collision_layer = 16
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RewardX2/Nail16"]
+shape = SubResource("CircleShape2D_54mq5")
+
+[node name="Nail10" type="StaticBody2D" parent="RewardX2"]
+position = Vector2(897, 417)
+collision_layer = 16
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RewardX2/Nail10"]
+shape = SubResource("CircleShape2D_54mq5")
+
+[node name="Nail17" type="StaticBody2D" parent="RewardX2"]
+position = Vector2(882, 510)
+collision_layer = 16
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RewardX2/Nail17"]
+shape = SubResource("CircleShape2D_54mq5")
+
+[node name="Nail15" type="StaticBody2D" parent="RewardX2"]
+position = Vector2(915, 479)
+collision_layer = 16
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RewardX2/Nail15"]
+shape = SubResource("CircleShape2D_54mq5")
+
+[node name="Nail14" type="StaticBody2D" parent="RewardX2"]
+position = Vector2(857, 475)
+collision_layer = 16
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RewardX2/Nail14"]
+shape = SubResource("CircleShape2D_54mq5")
+
+[node name="Nail11" type="StaticBody2D" parent="RewardX2"]
+position = Vector2(920, 392)
+collision_layer = 16
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RewardX2/Nail11"]
+shape = SubResource("CircleShape2D_54mq5")
+
+[node name="Nail12" type="StaticBody2D" parent="RewardX2"]
+position = Vector2(950, 370)
+collision_layer = 16
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RewardX2/Nail12"]
+shape = SubResource("CircleShape2D_54mq5")
+
+[node name="RoundPanelX2" type="Polygon2D" parent="RewardX2"]
+position = Vector2(794.425, 426.524)
+scale = Vector2(0.127073, 0.373774)
+polygon = PackedVector2Array(429.479, 284.868, 560.206, 357.104, 738.454, 357.104, 755.189, 348.504, 787.762, 326.345, 846.562, 284.868, 808.645, 284.868, 767.866, 314.297, 720.649, 346.402, 673.432, 346.402, 571.129, 346.402, 508.173, 314.297, 457.916, 284.868)
+script = ExtResource("2_dv1vr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="RewardX2/RoundPanelX2"]
+collision_layer = 16
+
+[node name="InitialField" type="Polygon2D" parent="."]
+position = Vector2(238.107, -186)
+scale = Vector2(0.643459, 1.1875)
+polygon = PackedVector2Array(730.261, 661.895, 616.812, 662.737, 617.333, 711, 730.261, 710.737, 730.261, 702.316, 624.522, 702.316, 624.522, 666.143, 730.261, 664.421)
+script = ExtResource("2_dv1vr")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="InitialField"]
+collision_layer = 16
+
+[node name="Balls" type="Node2D" parent="."]
+position = Vector2(649, 639)
