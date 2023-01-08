@@ -1,6 +1,8 @@
 extends Node2D
 
 var BallScene = preload("./ball.tscn")
+var EndPanelScene = preload("./end_panel.tscn")
+var GameOverPanelScene = preload("./game_over_panel.tscn")
 var MAX_SPEED = 4000
 var strength = 0
 
@@ -13,6 +15,7 @@ func _ready():
 	
 func create_ball():
 	$GUI/Panel/HBoxContainer2/Bet.disabled = (self.current_marbles <= 1)
+	$GUI/Panel/HBoxContainer2/End.disabled = false
 	var node = self.BallScene.instantiate()
 	node.connect("finished", func ():
 		var is_reward1 = $AreaRewardX1.get_overlapping_bodies()
@@ -40,6 +43,7 @@ func create_ball():
 		self.reward_marables += 1
 		if self.current_marbles == 0:
 			print_debug("Game over")
+			self.show_game_over()
 			return
 		self.create_ball()
 	)
@@ -48,19 +52,22 @@ func create_ball():
 	TweenUtils.show($Strength, 0.2)
 
 func _process(delta):
-	
-	$GUI/Panel/HBoxContainer2/Panel/HBoxContainer/Current.text = "Current marbles: %s" % str(self.current_marbles)
-	$GUI/Panel/HBoxContainer2/Panel/HBoxContainer/Reward.text = "Reward marbles: %s" % str(self.reward_marables)
+	$GUI/Panel/HBoxContainer2/Panel/HBoxContainer/Current.text = "[center]Current marbles: %s" % str(self.current_marbles) + "[/center]"
+	$GUI/Panel/HBoxContainer2/Panel/HBoxContainer/Reward.text = "[center]Reward marbles: %s" % str(self.reward_marables) + "[/center]"
 
 	if $Balls.get_child_count() <= 0:
 		return
 	if $Balls.get_children()[0].is_shot:
+		return
+	if $GUI.has_node("EndPanel"):
 		return
 	if Input.get_action_strength("player_shot") > 0:
 		if $GUI/Panel/HBoxContainer2/Bet.has_focus():
 			$GUI/Panel/HBoxContainer2/Bet.release_focus()
 		if not $GUI/Panel/HBoxContainer2/Bet.disabled:
 			$GUI/Panel/HBoxContainer2/Bet.disabled = true
+		if not $GUI/Panel/HBoxContainer2/End.disabled:
+			$GUI/Panel/HBoxContainer2/End.disabled = true
 		strength += delta
 		strength = min(strength, 1.0)
 	elif Input.is_action_just_released("player_shot"):
@@ -102,3 +109,36 @@ func _on_bet_pressed():
 	self.reward_marables += transfer_count * 2
 	
 	$GUI/Panel/HBoxContainer2/Bet.disabled = (self.current_marbles <= 1)
+
+
+func show_game_over():
+	var panel = self.GameOverPanelScene.instantiate()
+	MaskUtils.show_mask(self)
+	$GUI.add_child(panel)
+	await TweenUtils.show(panel)
+	GameManager.top_points = max(GameManager.top_points, self.current_marbles)
+	panel.get_node("MarginContainer/VBoxContainer/Content").text = "Game over! Your final points: %s. Your top rank points: %s." % [self.current_marbles, GameManager.top_points]
+	panel.get_node("MarginContainer/VBoxContainer/HBoxContainer/Yes").connect("pressed", func ():
+		TweenUtils.hide(panel)
+#		TweenUtils.hide($GUI, 0.3, { "modulate": true, "scale": false})
+		SceneChanger.change_scene("res://src/main.tscn"))
+
+func _on_end_pressed():
+	$GUI/Panel/HBoxContainer2/End.disabled = true
+	$GUI/Panel/HBoxContainer2/Bet.disabled = true
+	MaskUtils.show_mask(self)
+	var node = self.EndPanelScene.instantiate()
+	$GUI.add_child(node)
+	node.name = "EndPanel"
+	await TweenUtils.show(node)
+	
+	node.get_node("MarginContainer/VBoxContainer/HBoxContainer/Yes").connect("pressed", func ():
+		await TweenUtils.hide(node)
+		node.queue_free()
+		self.show_game_over())
+	node.get_node("MarginContainer/VBoxContainer/HBoxContainer/Cancel").connect("pressed", func ():
+		MaskUtils.close_mask(self)
+		await TweenUtils.hide(node)
+		node.queue_free()
+		$GUI/Panel/HBoxContainer2/End.disabled = false
+		$GUI/Panel/HBoxContainer2/Bet.disabled = self.current_marbles == 1)

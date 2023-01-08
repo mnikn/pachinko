@@ -1,0 +1,121 @@
+[gd_scene load_steps=9 format=3 uid="uid://drsjbqsbabbjg"]
+
+[ext_resource type="FontFile" uid="uid://dje1ekj8n7ehe" path="res://assets/fonts/Noto_Sans_SC/NotoSansSC-Medium.otf" id="1_fq53k"]
+[ext_resource type="FontFile" uid="uid://blna6hdacr5yk" path="res://assets/fonts/Noto_Sans_SC/NotoSansSC-Bold.otf" id="2_tbv31"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uiiaa"]
+bg_color = Color(0.25098, 0.152941, 0.317647, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.909804, 0.756863, 0.439216, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_snqjn"]
+bg_color = Color(0.870588, 0.619608, 0.254902, 1)
+border_width_bottom = 4
+border_color = Color(0.533333, 0.294118, 0.168627, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6hy64"]
+bg_color = Color(0.909804, 0.756863, 0.439216, 1)
+border_width_bottom = 4
+border_color = Color(0.870588, 0.619608, 0.254902, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gp4ge"]
+bg_color = Color(0.909804, 0.756863, 0.439216, 1)
+border_width_top = 4
+border_color = Color(0.870588, 0.619608, 0.254902, 0)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jxgil"]
+bg_color = Color(0.376471, 0.172549, 0.172549, 1)
+border_width_bottom = 4
+border_color = Color(0.203922, 0.109804, 0.152941, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fum1a"]
+
+[node name="GameOverPanel" type="Panel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -247.0
+offset_top = -108.5
+offset_right = 247.0
+offset_bottom = 108.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_uiiaa")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 478.0
+offset_bottom = 201.0
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Content" type="Label" parent="MarginContainer/VBoxContainer"]
+offset_top = 36.0
+offset_right = 462.0
+offset_bottom = 102.0
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("1_fq53k")
+theme_override_font_sizes/font_size = 20
+text = "Game over! Your final points: %s. Your top rank points: %s."
+autowrap_mode = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+offset_top = 118.0
+offset_right = 462.0
+offset_bottom = 149.0
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Yes" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+offset_left = 191.0
+offset_right = 271.0
+offset_bottom = 31.0
+focus_mode = 1
+mouse_default_cursor_shape = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_tbv31")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_snqjn")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6hy64")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_gp4ge")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_jxgil")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fum1a")
+text = "Restart"
