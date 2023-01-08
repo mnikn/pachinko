@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://djpyer0o2dij2"]
+[gd_scene load_steps=25 format=3 uid="uid://djpyer0o2dij2"]
 
 [ext_resource type="Script" path="res://src/main.gd" id="1_x6r0o"]
 [ext_resource type="Script" path="res://src/polygon_static_body.gd" id="2_dv1vr"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bmv5sqjl3fo88" path="res://src/nail.tscn" id="4_0rri2"]
 [ext_resource type="FontFile" uid="uid://blna6hdacr5yk" path="res://assets/fonts/Noto_Sans_SC/NotoSansSC-Bold.otf" id="5_w8i62"]
 [ext_resource type="Texture2D" uid="uid://cjr2x0b3ul8j4" path="res://assets/mock_v2.png" id="6_fq0ia"]
+[ext_resource type="AudioStream" uid="uid://d30kxuc4oauv4" path="res://assets/sounds/song.wav" id="7_o4xml"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3n418"]
 bg_color = Color(0.25098, 0.152941, 0.317647, 1)
@@ -527,6 +528,7 @@ offset_bottom = 52.0
 theme_override_styles/panel = SubResource("StyleBoxEmpty_gnu7a")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="GUI/Panel"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -535,12 +537,12 @@ grow_vertical = 2
 theme_override_constants/separation = 12
 
 [node name="Panel" type="Panel" parent="GUI/Panel/HBoxContainer2"]
-offset_right = 473.0
-offset_bottom = 40.0
+layout_mode = 2
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_kxhat")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="GUI/Panel/HBoxContainer2/Panel"]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -552,9 +554,7 @@ alignment = 1
 
 [node name="Current" type="RichTextLabel" parent="GUI/Panel/HBoxContainer2/Panel/HBoxContainer"]
 clip_contents = false
-offset_top = 5.0
-offset_right = 233.0
-offset_bottom = 35.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_override_colors/default_color = Color(0.909804, 0.756863, 0.439216, 1)
@@ -567,10 +567,7 @@ fit_content_height = true
 scroll_active = false
 
 [node name="Reward" type="RichTextLabel" parent="GUI/Panel/HBoxContainer2/Panel/HBoxContainer"]
-offset_left = 239.0
-offset_top = 5.0
-offset_right = 473.0
-offset_bottom = 35.0
+layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 theme_override_colors/default_color = Color(0.909804, 0.756863, 0.439216, 1)
@@ -584,9 +581,7 @@ scroll_active = false
 
 [node name="Bet" type="Button" parent="GUI/Panel/HBoxContainer2"]
 custom_minimum_size = Vector2(64, 0)
-offset_left = 485.0
-offset_right = 549.0
-offset_bottom = 40.0
+layout_mode = 2
 focus_mode = 1
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -601,9 +596,7 @@ text = "Bet"
 
 [node name="End" type="Button" parent="GUI/Panel/HBoxContainer2"]
 custom_minimum_size = Vector2(64, 0)
-offset_left = 561.0
-offset_right = 625.0
-offset_bottom = 40.0
+layout_mode = 2
 focus_mode = 1
 mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
@@ -615,6 +608,13 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_kjbj1")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_e20kh")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_xhqfa")
 text = "End"
+
+[node name="BgmPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_o4xml")
+volume_db = 5.0
+autoplay = true
+
+[node name="EffectPlayer" type="AudioStreamPlayer2D" parent="."]
 
 [connection signal="pressed" from="GUI/Panel/HBoxContainer2/Bet" to="." method="_on_bet_pressed"]
 [connection signal="pressed" from="GUI/Panel/HBoxContainer2/End" to="." method="_on_end_pressed"]

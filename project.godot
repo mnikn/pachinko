@@ -15,6 +15,11 @@ _global_script_classes=[{
 "path": "res://utils/array.gd"
 }, {
 "base": "Node",
+"class": &"FileUtils",
+"language": &"GDScript",
+"path": "res://utils/file.gd"
+}, {
+"base": "Node",
 "class": &"MaskUtils",
 "language": &"GDScript",
 "path": "res://utils/mask.gd"
@@ -25,14 +30,21 @@ _global_script_classes=[{
 "path": "res://utils/object.gd"
 }, {
 "base": "Node",
+"class": &"RandomUtils",
+"language": &"GDScript",
+"path": "res://utils/random.gd"
+}, {
+"base": "Node",
 "class": &"TweenUtils",
 "language": &"GDScript",
 "path": "res://utils/tween.gd"
 }]
 _global_script_class_icons={
 "ArrayUtils": "",
+"FileUtils": "",
 "MaskUtils": "",
 "ObjectUtils": "",
+"RandomUtils": "",
 "TweenUtils": ""
 }
 
@@ -41,11 +53,12 @@ _global_script_class_icons={
 config/name="pachinko"
 run/main_scene="res://src/main.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://icon.png"
 
 [autoload]
 
 SceneChanger="*res://src/platform/scene_changer.tscn"
+ResourceManager="*res://src/platform/resource_manager.gd"
 GameManager="*res://src/platform/game_manager.gd"
 
 [display]

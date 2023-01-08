@@ -11,6 +11,7 @@ var reward_marables = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	TweenUtils.audio_fade_in($BgmPlayer, 0.3)
 	self.create_ball()
 	
 func create_ball():
@@ -68,9 +69,14 @@ func _process(delta):
 			$GUI/Panel/HBoxContainer2/Bet.disabled = true
 		if not $GUI/Panel/HBoxContainer2/End.disabled:
 			$GUI/Panel/HBoxContainer2/End.disabled = true
+		if strength == 0:
+			$EffectPlayer.stream = ResourceManager.load_file("res://assets/sounds/gather_strength.wav")
+			$EffectPlayer.play()
 		strength += delta
 		strength = min(strength, 1.0)
 	elif Input.is_action_just_released("player_shot"):
+		$EffectPlayer.stream = ResourceManager.load_file("res://assets/sounds/shot.wav")
+		$EffectPlayer.play()
 		var node = $Balls.get_children()[0]
 		node.is_shot = true
 		TweenUtils.hide($Strength, 0.3)
@@ -119,8 +125,9 @@ func show_game_over():
 	GameManager.top_points = max(GameManager.top_points, self.current_marbles)
 	panel.get_node("MarginContainer/VBoxContainer/Content").text = "Game over! Your final points: %s. Your top rank points: %s." % [self.current_marbles, GameManager.top_points]
 	panel.get_node("MarginContainer/VBoxContainer/HBoxContainer/Yes").connect("pressed", func ():
+		TweenUtils.audio_fade_out($BgmPlayer, 0.3)
 		TweenUtils.hide(panel)
-#		TweenUtils.hide($GUI, 0.3, { "modulate": true, "scale": false})
+#		TweenUtils.hide($GUI, 0.3, { "modulate": true, "scale": false})\
 		SceneChanger.change_scene("res://src/main.tscn"))
 
 func _on_end_pressed():
