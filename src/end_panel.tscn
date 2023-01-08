@@ -3,7 +3,7 @@
 [ext_resource type="FontFile" uid="uid://dje1ekj8n7ehe" path="res://assets/fonts/Noto_Sans_SC/NotoSansSC-Medium.otf" id="1_06rmf"]
 [ext_resource type="FontFile" uid="uid://blna6hdacr5yk" path="res://assets/fonts/Noto_Sans_SC/NotoSansSC-Bold.otf" id="2_rfavt"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2e66j"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8coqo"]
 bg_color = Color(0.25098, 0.152941, 0.317647, 1)
 border_width_left = 4
 border_width_top = 4
@@ -15,7 +15,7 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ra86n"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fa5co"]
 bg_color = Color(0.870588, 0.619608, 0.254902, 1)
 border_width_bottom = 4
 border_color = Color(0.533333, 0.294118, 0.168627, 1)
@@ -24,7 +24,7 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h127x"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oim82"]
 bg_color = Color(0.909804, 0.756863, 0.439216, 1)
 border_width_bottom = 4
 border_color = Color(0.870588, 0.619608, 0.254902, 1)
@@ -33,7 +33,7 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ixuam"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r77d8"]
 bg_color = Color(0.909804, 0.756863, 0.439216, 1)
 border_width_top = 4
 border_color = Color(0.870588, 0.619608, 0.254902, 0)
@@ -42,7 +42,7 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_12rw1"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3voc2"]
 bg_color = Color(0.376471, 0.172549, 0.172549, 1)
 border_width_bottom = 4
 border_color = Color(0.203922, 0.109804, 0.152941, 1)
@@ -51,9 +51,9 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3tb80"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ncojn"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13m3t"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0x55a"]
 bg_color = Color(0.811765, 0.341176, 0.235294, 1)
 border_width_bottom = 4
 border_color = Color(0.647059, 0.188235, 0.188235, 1)
@@ -62,7 +62,7 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v86p2"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_larix"]
 bg_color = Color(0.854902, 0.52549, 0.243137, 1)
 border_width_bottom = 4
 border_color = Color(0.811765, 0.341176, 0.235294, 1)
@@ -71,7 +71,7 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8c2j6"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0nfhq"]
 bg_color = Color(0.854902, 0.52549, 0.243137, 1)
 border_width_top = 4
 border_color = Color(0.870588, 0.619608, 0.254902, 0)
@@ -80,7 +80,7 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5kg2"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yityr"]
 bg_color = Color(0.458824, 0.141176, 0.219608, 1)
 border_width_bottom = 4
 border_color = Color(0.254902, 0.113725, 0.192157, 1)
@@ -89,7 +89,7 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x7elo"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_47qr6"]
 
 [node name="EndPanel" type="Panel"]
 anchors_preset = 8
@@ -103,7 +103,7 @@ offset_right = 247.0
 offset_bottom = 108.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_2e66j")
+theme_override_styles/panel = SubResource("StyleBoxFlat_8coqo")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -151,11 +151,11 @@ mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_rfavt")
 theme_override_font_sizes/font_size = 18
-theme_override_styles/normal = SubResource("StyleBoxFlat_ra86n")
-theme_override_styles/hover = SubResource("StyleBoxFlat_h127x")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ixuam")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_12rw1")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_3tb80")
+theme_override_styles/normal = SubResource("StyleBoxFlat_fa5co")
+theme_override_styles/hover = SubResource("StyleBoxFlat_oim82")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_r77d8")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_3voc2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ncojn")
 text = "Yes"
 
 [node name="Cancel" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
@@ -168,9 +168,9 @@ mouse_default_cursor_shape = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_rfavt")
 theme_override_font_sizes/font_size = 18
-theme_override_styles/normal = SubResource("StyleBoxFlat_13m3t")
-theme_override_styles/hover = SubResource("StyleBoxFlat_v86p2")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_8c2j6")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_v5kg2")
-theme_override_styles/focus = SubResource("StyleBoxEmpty_x7elo")
+theme_override_styles/normal = SubResource("StyleBoxFlat_0x55a")
+theme_override_styles/hover = SubResource("StyleBoxFlat_larix")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0nfhq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_yityr")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_47qr6")
 text = "Cancel"
